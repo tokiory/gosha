@@ -16,7 +16,7 @@ func main() {
 
   switch {
     case arguments.IsHelpFlag(): 
-    fmt.Println(arguments.HelpMessage)
+    controller.Run(controller.CommandHelp)
 
     case arguments.IsAddFlag(): 
       if userArgs[0] == "" {
