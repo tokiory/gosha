@@ -7,4 +7,5 @@ const (
   CommandCheck
   CommandModify
   CommandList
+  CommandAll
 )

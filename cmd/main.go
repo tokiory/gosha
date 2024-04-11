@@ -55,6 +55,10 @@ func main() {
 
       controller.Run(controller.CommandCheck, userArgs[0])
 
+    case arguments.IsAllFlag():
+      controller.Run(controller.CommandAll)
+
+
   default:
     controller.Run(controller.CommandList)
   }

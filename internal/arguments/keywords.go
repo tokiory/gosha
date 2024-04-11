@@ -6,4 +6,5 @@ const (
   checkKeyword = "check"
   helpKeyword = "help"
   modifyKeyword = "mod"
+  allKeyword = "all"
 )

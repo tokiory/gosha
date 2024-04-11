@@ -2,6 +2,8 @@ package controller
 
 func Run(command int, args ...string) {
   switch command {
+  case CommandAll:
+    all()
   case CommandAdd:
     add(args[0])
   case CommandHelp:

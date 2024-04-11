@@ -7,11 +7,11 @@ help, --help, -h                   Show current message
 add <name>, -a <name>              Add new todo item
 check <id>, -c <id>                Toggle todo item
 <nothing>                          List not checked todo items
+all                                List all todo items
 
 Not implemented commands:
 remove <id>, -r <id>               Remove todo item
 mod <id> <name>, -m <id> <name>    Modify todo item
-all                                List all todo items`
 
 
 Build: Just run

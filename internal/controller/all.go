@@ -1,3 +1,4 @@
+
 package controller
 
 import (
@@ -6,7 +7,7 @@ import (
 	"log"
 )
 
-func list() {
+func all() {
   store, err := storage.GetStore()
   if err != nil {
     log.Fatalf(err.Error())
@@ -18,8 +19,6 @@ func list() {
   }
 
   for _, task := range tasks {
-    if task.Done {
-      fmt.Println(task.Id, getDoneText(task.Done), task.Name)
-    }
+    fmt.Println(task.Id, getDoneText(task.Done), task.Name)
   }
 }
