@@ -1,6 +1,6 @@
 🦦 go.sh(a) - Is a simple todo app, I've done to just learn basics of Go
 
-It will write all your tasks to the $HOME/.gosha in json format.
+It will write all your tasks to the $HOME/.gosha in JSON format.
 
 Currently implemented commands:
 help, --help, -h                   Show current message
