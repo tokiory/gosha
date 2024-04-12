@@ -11,7 +11,7 @@ func Run(command int, args ...string) {
 	case CommandCheck:
 		check(args[0])
 	case CommandModify:
-		// TODO: Modify logic
+		modify(args[0], args[1])
 	case CommandRemove:
 		remove(args[0])
 	case CommandList:

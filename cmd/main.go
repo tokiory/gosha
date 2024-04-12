@@ -45,7 +45,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Println("Change an item!")
+		controller.Run(controller.CommandModify, userArgs[0], userArgs[1])
 
 	case arguments.IsCheckFlag():
 		if userArgs[0] == "" {
