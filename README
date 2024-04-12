@@ -12,8 +12,23 @@ remove <id>, -r, --remove <id>            Remove todo item
 all                                       List all todo items
 clear                                     Clear all todo items
 
-Build: Just run
+**Run**
+1. Get current repo:
+git clone https://github.com/tokiory/gosha.git
+
+2. Run
 go run cmd/main.go <arguments>
+
+
+**Install**
+1. Get current repo:
+git clone https://github.com/tokiory/gosha.git
+
+2. Build it:
+go build cmd/main.go
+
+3. Move it to the /usr/local/bin
+sudo mv ./main /usr/local/bin/gosha
 
 ---
 
