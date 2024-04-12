@@ -10,6 +10,7 @@ mod <id> <name>, -m, --mod <id> <name>    Modify todo item
 remove <id>, -r, --remove <id>            Remove todo item
 <nothing>                                 List not checked todo items
 all                                       List all todo items
+clear                                     Clear all todo items
 
 Build: Just run
 go run cmd/main.go <arguments>
