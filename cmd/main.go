@@ -9,57 +9,56 @@ import (
 )
 
 func main() {
-  userArgs := append(os.Args, "", "")
-  userArgs = userArgs[2:]
+	userArgs := append(os.Args, "", "")
+	userArgs = userArgs[2:]
 
-  flag.Parse()
+	flag.Parse()
 
-  switch {
-    case arguments.IsHelpFlag(): 
-    controller.Run(controller.CommandHelp)
+	switch {
+	case arguments.IsHelpFlag():
+		controller.Run(controller.CommandHelp)
 
-    case arguments.IsAddFlag(): 
-      if userArgs[0] == "" {
-        fmt.Println(arguments.MissingArgMessage("name"))
-        os.Exit(1)
-      }
+	case arguments.IsAddFlag():
+		if userArgs[0] == "" {
+			fmt.Println(arguments.MissingArgMessage("name"))
+			os.Exit(1)
+		}
 
-      controller.Run(controller.CommandAdd, userArgs[0])
-    
-    case arguments.IsRemoveFlag():
-      if userArgs[0] == "" {
-        fmt.Println(arguments.MissingArgMessage("id"))
-        os.Exit(1)
-      }
+		controller.Run(controller.CommandAdd, userArgs[0])
 
-      fmt.Println("Remove an item!")
+	case arguments.IsRemoveFlag():
+		if userArgs[0] == "" {
+			fmt.Println(arguments.MissingArgMessage("id"))
+			os.Exit(1)
+		}
 
-    case arguments.IsModFlag():
-      if userArgs[0] == "" {
-        fmt.Println(arguments.MissingArgMessage("id"))
-        os.Exit(1)
-      }
+		controller.Run(controller.CommandRemove, userArgs[0])
 
-      if userArgs[1] == "" {
-        fmt.Println(arguments.MissingArgMessage("name"))
-        os.Exit(1)
-      }
+	case arguments.IsModFlag():
+		if userArgs[0] == "" {
+			fmt.Println(arguments.MissingArgMessage("id"))
+			os.Exit(1)
+		}
 
-      fmt.Println("Change an item!")
+		if userArgs[1] == "" {
+			fmt.Println(arguments.MissingArgMessage("name"))
+			os.Exit(1)
+		}
 
-    case arguments.IsCheckFlag():
-      if userArgs[0] == "" {
-        fmt.Println(arguments.MissingArgMessage("id"))
-        os.Exit(1)
-      }
+		fmt.Println("Change an item!")
 
-      controller.Run(controller.CommandCheck, userArgs[0])
+	case arguments.IsCheckFlag():
+		if userArgs[0] == "" {
+			fmt.Println(arguments.MissingArgMessage("id"))
+			os.Exit(1)
+		}
 
-    case arguments.IsAllFlag():
-      controller.Run(controller.CommandAll)
+		controller.Run(controller.CommandCheck, userArgs[0])
 
+	case arguments.IsAllFlag():
+		controller.Run(controller.CommandAll)
 
-  default:
-    controller.Run(controller.CommandList)
-  }
+	default:
+		controller.Run(controller.CommandList)
+	}
 }

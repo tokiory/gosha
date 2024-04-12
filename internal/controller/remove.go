@@ -4,20 +4,21 @@ import (
 	"encoding/json"
 	"fmt"
 	"gosha/internal/storage"
+	"log"
+	"slices"
 )
 
-func check(id string) {
+func remove(id string) {
 	store, err := storage.GetStore()
 	if err != nil {
-		panic(err)
+		log.Fatalf(err.Error())
 	}
 
 	tasks, err := storage.Content(store)
 	if err != nil {
-		panic(err)
+		log.Fatalf(err.Error())
 	}
 
-	// Find required task
 	var foundTaskIdx = -1
 	for idx, task := range tasks {
 		if task.Id == id {
@@ -29,10 +30,9 @@ func check(id string) {
 		panic(fmt.Sprintf("No such task with id: %s", id))
 	}
 
-	// Toggle founded task
-	tasks[foundTaskIdx].Done = !tasks[foundTaskIdx].Done
+	tasks = slices.Concat(tasks[:foundTaskIdx], tasks[foundTaskIdx+1:])
 
-	// Truncate old file
+	// Clear all data from storage
 	store.Truncate(0)
 
 	content, err := json.Marshal(tasks)
