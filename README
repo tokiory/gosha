@@ -3,16 +3,13 @@
 It will write all your tasks to the $HOME/.gosha in JSON format.
 
 Currently implemented commands:
-help, --help, -h                   Show current message
-add <name>, -a <name>              Add new todo item
-check <id>, -c <id>                Toggle todo item
-remove <id>, -r <id>               Remove todo item
-<nothing>                          List not checked todo items
-all                                List all todo items
-
-Not implemented commands:
-mod <id> <name>, -m <id> <name>    Modify todo item
-
+help, --help, -h                          Show current message
+add <name>, -a, --add <name>              Add new todo item
+check <id>, -c, --check <id>              Toggle todo item
+mod <id> <name>, -m, --mod <id> <name>    Modify todo item
+remove <id>, -r, --remove <id>            Remove todo item
+<nothing>                                 List not checked todo items
+all                                       List all todo items
 
 Build: Just run
 go run cmd/main.go <arguments>
