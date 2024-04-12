@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"fmt"
+	"github.com/rodaine/table"
 	"gosha/internal/storage"
 	"log"
 )
@@ -17,9 +17,13 @@ func list() {
 		log.Fatalf(err.Error())
 	}
 
+	t := table.New("ID", "Name")
+
 	for _, task := range tasks {
 		if !task.Done {
-			fmt.Println(task.Id, task.Name)
+			t.AddRow(task.Id, task.Name)
 		}
 	}
+
+	t.Print()
 }
