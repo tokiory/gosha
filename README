@@ -1,4 +1,4 @@
-🦦 go.sh(a) - Is a simple todo app for cli, without any mess of features
+🦦 go.sh(a) - Is a dead simple todo app for cli, without any mess of features
 
 It will write all your tasks to the $HOME/.gosha in JSON format.
 
