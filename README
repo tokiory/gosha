@@ -11,6 +11,7 @@ remove <id>, -r, --remove <id>            Remove todo item
 <nothing>                                 List not checked todo items
 all                                       List all todo items
 clear                                     Clear all todo items
+tidy                                      Delete all checked todo items
 
 **Run**
 1. Get current repo:
